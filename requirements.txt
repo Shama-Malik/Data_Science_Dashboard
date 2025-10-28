@@ -8,3 +8,8 @@ pytest
 flake8
 ipython
 #### Add text to install the python-package here
+pandas
+pytest
+fasthtml
+sqlite3
+sqlalchemy

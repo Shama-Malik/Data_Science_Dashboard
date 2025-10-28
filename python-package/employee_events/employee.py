@@ -62,7 +62,7 @@ class Employee(QueryBase, QueryMixin):
     # so when it is called, a pandas dataframe
     # is returns containing the execution of
     # the sql query
-    #### YOUR CODE HERE
+    
     def model_data(self, id):
 
         return f"""

@@ -1,1 +1,6 @@
 pandas==2.2.3
+pandas
+pytest
+fasthtml
+sqlite3
+sqlalchemy
