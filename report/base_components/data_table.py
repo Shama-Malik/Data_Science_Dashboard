@@ -1,9 +1,9 @@
+from fasthtml.common import Table, Td, Th, Tr
+
 from .base_component import BaseComponent
-from fasthtml.common import Table, Tr, Th, Td
 
 
 class DataTable(BaseComponent):
-
 
     def build_component(self, entity_id, model):
 
@@ -11,21 +11,13 @@ class DataTable(BaseComponent):
 
             data = self.component_data(entity_id, model)
 
-            table = Table(
-                Tr(
-                    Th(column) for column in data.columns
-                )
-            )
+            table = Table(Tr(Th(column) for column in data.columns))
 
             for data_row in data.to_numpy():
 
-                table_row = Tr(
-                    Td(val) for val in data_row
-                )
+                table_row = Tr(Td(val) for val in data_row)
 
                 children = (*table.children, table_row)
                 table.children = children
-            
+
             return table
-            
-        

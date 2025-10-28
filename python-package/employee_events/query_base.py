@@ -1,7 +1,9 @@
 # Import any dependencies needed to execute sql queries
 from pathlib import Path
-import pandas as pd
 from sqlite3 import connect
+
+import pandas as pd
+
 
 # Define a class called QueryBase
 # Use inheritance to add methods
@@ -16,15 +18,12 @@ class QueryBase:
         # Create a path to the database file using pathlib
         self.db_path = Path(__file__).resolve().parent / "employee_events.db"
 
-
     # Define a `names` method that receives
     # no passed arguments
     def names(self):
-         
 
         # Return an empty list
         return []
-
 
     # Define an `event_counts` method
     # that receives an `id` argument
@@ -51,8 +50,6 @@ class QueryBase:
         """
         with connect(self.db_path) as conn:
             return pd.read_sql_query(query, conn)
-            
-    
 
     # Define a `notes` method that receives an id argument
     # This function should return a pandas dataframe
@@ -76,4 +73,3 @@ class QueryBase:
         # Execute query and return DataFrame
         with connect(self.db_path) as conn:
             return pd.read_sql_query(query, conn)
-
