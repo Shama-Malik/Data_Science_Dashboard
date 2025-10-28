@@ -52,6 +52,7 @@ def table_names(db_conn):
 # `test_employee_table_exists`
 # This function should receive the `table_names`
 # fixture as an argument
+@pytest.fixture
 def test_employee_table_exists(table_names):
     assert "employee" in table_names
 
@@ -60,6 +61,7 @@ def test_employee_table_exists(table_names):
 # `test_team_table_exists`
 # This function should receive the `table_names`
 # fixture as an argument
+@pytest.fixture
 def test_team_table_exists(table_names):
 
     
@@ -73,6 +75,7 @@ def test_team_table_exists(table_names):
 # `test_team_table_exists`
 # This function should receive the `table_names`
 # fixture as an argument
+@pytest.fixture
 def test_team_table_exists(table_names):
      
 
